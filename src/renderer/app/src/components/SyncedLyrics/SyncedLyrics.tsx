@@ -1,6 +1,7 @@
 import { usePlayback } from '~/hooks/usePlayback'
 import { useSyncedLyrics } from '~/hooks/useSyncedLyrics'
 import { Lyrics } from '~/types/lyrics'
+import { SyncedLyricsLine } from './SyncedLyricsLine'
 
 interface SyncedLyricsProps {
   lyrics?: Lyrics
@@ -18,30 +19,18 @@ export const SyncedLyrics = ({ lyrics }: SyncedLyricsProps) => {
   })
 
   return (
-    <div className='synced-lyrics-container'>
+    <div data-testid='synced-lyrics' className='synced-lyrics-container'>
       <div className='synced-lyrics-lines'>
-        {lines?.map(line => {
-          if (activeLine?.id === line.id) {
-            return (
-              <div
-                ref={activeLineRef}
-                className='synced-lyrics-line--active'
-                key={line.id}
-              >
-                {line.words}
-              </div>
-            )
-          }
-
-          return (
-            <div
-              className={`synced-lyrics-line${line.passed ? '--passed' : ''}`}
-              key={line.id}
-            >
-              {line.words}
-            </div>
-          )
-        })}
+        {lines.map(line => (
+          <SyncedLyricsLine
+            isActive={activeLine?.id === line.id}
+            isPassed={line.passed}
+            ref={activeLineRef}
+            key={line.id}
+          >
+            {line.words}
+          </SyncedLyricsLine>
+        ))}
       </div>
     </div>
   )
