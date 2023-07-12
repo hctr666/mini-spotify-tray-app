@@ -1,7 +1,6 @@
 import fetch from 'node-fetch'
 
 import SpotifyConstants from '../../constants/spotify'
-import { isDevelopment } from '../../helpers/environment'
 import Logger from '../logger'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -154,13 +153,6 @@ class SpotifyClient {
 
   getPlaybackState = async () => {
     // TODO: create a playback api mock
-    if (isDevelopment()) {
-      // const [
-      //   mockData,
-      // ] = require('../../../../api-mocks/playback-state-mock.json') //FIXME
-      // return { playbackState: mockData }
-    }
-
     const { data, retryAfter } = await this.fetchWebApi(
       `v1/me/player?market=${DEFAULT_MARKET}`
     )

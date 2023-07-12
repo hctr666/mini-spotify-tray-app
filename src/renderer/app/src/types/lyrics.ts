@@ -4,6 +4,7 @@ export type LyricsLine = {
   words: string
   syllables: string[]
   endTimeMs: string
+  passed?: boolean
 }
 
 export interface Lyrics {

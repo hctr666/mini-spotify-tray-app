@@ -36,7 +36,6 @@ declare global {
     }
     Core: {
       log: (payload: LogPayload, level: 'info' | 'error') => void
-      isDev: () => boolean
     }
     LyricsService: {
       connect: () => void

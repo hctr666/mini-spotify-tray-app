@@ -19,6 +19,7 @@ module.exports = {
   moduleNameMapper: {
     '^react-native$': 'react-native-web',
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
+    '^~(.*)$': ['<rootDir>/src$1', '<rootDir>/src/renderer/app/src$1'],
   },
   modulePaths: [],
   setupFiles: ['react-app-polyfill/jsdom'],
@@ -35,7 +36,7 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$',
   ],
   transform: {
-    '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': '<rootDir>/config/jest/babelTransform.js',
+    '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': '@swc/jest',
     '^.+\\.css$': '<rootDir>/config/jest/cssTransform.js',
     '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)':
       '<rootDir>/config/jest/fileTransform.js',
