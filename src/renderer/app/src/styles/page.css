@@ -4,7 +4,7 @@
 }
 
 .page .headline {
-  @apply text-gray-400 text-lg;
+  @apply text-neutral-300 text-lg;
 }
 
 .page-header {

@@ -1,10 +1,10 @@
 import { useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { HiOutlineX } from 'react-icons/hi'
-import { FaPlug, FaCircle } from 'react-icons/fa'
 
 import { Page } from '~/components'
 import { useLyricsServiceState } from '~/hooks/useLyricsServiceState/useLyricsServiceState'
+import { Button } from '~/components/Button'
+import { Icon } from '~/components/Icon/Icon'
 
 export const PageSettings = () => {
   const { isConnected } = useLyricsServiceState()
@@ -26,7 +26,7 @@ export const PageSettings = () => {
     if (isConnected) {
       return (
         <>
-          <FaCircle className='text-green-600' size={12} />
+          <Icon name='circle' size='xxs' className='text-success' />
           <span>Lyrics service: connected</span>
         </>
       )
@@ -34,15 +34,19 @@ export const PageSettings = () => {
 
     return (
       <>
-        <FaCircle className='text-red-600' size={12} />
+        <Icon name='circle' size='xxs' className='text-error' />
         <span>Lyrics service: disconnected</span>
-        <button
+        <Button
+          variant='transparent'
           title='Connect to service'
-          className='hover:text-white'
           onClick={handleLyricsConnect}
         >
-          <FaPlug />
-        </button>
+          <Icon
+            name='plug'
+            size='xxs'
+            className='text-neutral hover:text-white'
+          />
+        </Button>
       </>
     )
   }, [isConnected, handleLyricsConnect])
@@ -50,18 +54,17 @@ export const PageSettings = () => {
   return (
     <Page>
       <div className='flex flex-col gap-4 h-full items-center justify-center w-full relative'>
-        <button
-          onClick={handleCloseClick}
-          className='text-gray-300 text-2xl absolute top-3 right-2 font-extralight'
-        >
-          <HiOutlineX />
-        </button>
+        <div className='absolute top-3 right-2'>
+          <Button onClick={handleCloseClick} variant='transparent'>
+            <Icon name='outline-x' className='text-gray-300' />
+          </Button>
+        </div>
         <div className='text-gray-300 flex items-center gap-2 text-sm'>
           {lyricsServiceStatusContent}
         </div>
-        <button onClick={handleSignOut} className='button-primary'>
+        <Button variant='primary' rounded onClick={handleSignOut}>
           Sign out
-        </button>
+        </Button>
       </div>
     </Page>
   )

@@ -1,4 +1,5 @@
 import { Navigate } from 'react-router-dom'
+import { Button } from '~/components/Button'
 
 import { Page } from '~/components'
 import { useAuth } from '~/hooks/useAuth/useAuth'
@@ -19,9 +20,9 @@ export const PageLogin = () => {
       <Page.Content noHeader>
         <div className='flex flex-col gap-4 h-full items-center justify-center w-full relative'>
           <div className='headline'>Please sign in to enjoy the app</div>
-          <button className='button-primary' onClick={handleSignIn}>
+          <Button variant='primary' rounded onClick={handleSignIn}>
             Sign in
-          </button>
+          </Button>
         </div>
       </Page.Content>
     </Page>

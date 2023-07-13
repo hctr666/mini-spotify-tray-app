@@ -33,7 +33,7 @@ export const LyricsViewer = () => {
   if (error) {
     return (
       <div className='lyrics-viewer-error'>
-        <span className='text-red-600 opacity-80 text-lg'>{error}</span>
+        <span className='text-error opacity-80 text-lg'>{error}</span>
       </div>
     )
   }
@@ -45,7 +45,7 @@ export const LyricsViewer = () => {
   if (lyricsNotFound) {
     return (
       <div className='lyrics-viewer-not-found'>
-        <span className='text-gray-400 text-xl'>
+        <span className='text-neutral text-xl'>
           We couldn't find lyrics for this track
         </span>
       </div>

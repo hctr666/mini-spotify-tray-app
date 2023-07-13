@@ -14,11 +14,11 @@
 }
 
 .playback-track-artist {
-  @apply text-gray-400 font-light truncate;
+  @apply text-neutral-400 font-light truncate;
 }
 
 .playback-track-name {
-  @apply font-semibold text-gray-200 truncate;
+  @apply font-semibold text-neutral truncate;
 }
 
 .playback-controls {

@@ -17,7 +17,7 @@ export const UnsyncedLyrics = ({ lyrics }: UnsyncedLyricsProps) => {
 
   return (
     <div className='unsynced-lyrics-container'>
-      <div className='text-gray-300 text-sm'>
+      <div className='text-neutral text-sm'>
         These lyrics aren't synced to the song yet
       </div>
       <div className='unsynced-lyrics-lines'>

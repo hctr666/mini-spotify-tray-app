@@ -1,7 +1,7 @@
-import { HiFastForward, HiPause, HiPlay, HiRewind } from 'react-icons/hi'
-
+import { Button } from '../Button'
+import { Icon } from '../Icon'
 import { usePlayback } from '~/hooks/usePlayback'
-import { useTrack } from '~/hooks/useTrack/useTrack'
+import { useTrack } from '~/hooks/useTrack'
 
 export const Playback = () => {
   const { playbackState, playOrPause, skipToNext, skipToPrevious } =
@@ -26,24 +26,25 @@ export const Playback = () => {
         </div>
       </div>
       <div className='playback-controls'>
-        <button
-          onClick={skipToPrevious}
-          className='text-gray-400 text-2xl hover:text-white'
-        >
-          <HiRewind />
-        </button>
-        <button
-          onClick={playOrPause}
-          className='text-white text-4xl hover:text-purple-700'
-        >
-          {playbackState.isPlaying ? <HiPause /> : <HiPlay />}
-        </button>
-        <button
-          onClick={skipToNext}
-          className='text-gray-400 text-2xl hover:text-white'
-        >
-          <HiFastForward />
-        </button>
+        <Button variant='transparent' onClick={skipToPrevious}>
+          <Icon
+            name='rewind'
+            className='text-neutral-300 hover:text-neutral-lighter'
+          />
+        </Button>
+        <Button variant='transparent' onClick={playOrPause}>
+          <Icon
+            name={playbackState.isPlaying ? 'pause' : 'play'}
+            size='lg'
+            className='text-neutral hover:text-white'
+          />
+        </Button>
+        <Button variant='transparent' onClick={skipToNext}>
+          <Icon
+            name='fast-Forward'
+            className='text-neutral-300 hover:text-neutral-lighter'
+          />
+        </Button>
       </div>
     </div>
   )

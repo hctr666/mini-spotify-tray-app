@@ -3,7 +3,7 @@
 }
 
 .unsynced-lyrics-lines {
-  @apply flex flex-col gap-1 leading-7 text-lg text-left text-gray-500 font-medium;
+  @apply flex flex-col gap-1 leading-7 text-lg text-left font-medium;
 }
 
 .unsynced-lyrics-line {

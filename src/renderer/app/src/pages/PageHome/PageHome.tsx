@@ -1,6 +1,5 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { HiOutlineCog } from 'react-icons/hi'
 
 import { Page } from '~/components'
 import { LyricsViewer } from '~/components/LyricsViewer'
@@ -10,6 +9,8 @@ import { useLyricsServiceState } from '~/hooks/useLyricsServiceState/useLyricsSe
 import { PlaybackInactiveMessage } from '~/components/PlaybackInactiveMessage'
 import { LyricsNotConnected } from '~/components/LyricsNotConnected'
 import { LyricsProvider } from '~/contexts/LyricsProvider'
+import { Button } from '~/components/Button'
+import { Icon } from '~/components/Icon/Icon'
 
 export const PageHome = () => {
   const navigate = useNavigate()
@@ -42,12 +43,11 @@ export const PageHome = () => {
   return (
     <Page>
       <Page.Header>
-        <button
-          onClick={handleSettingsClick}
-          className='text-gray-200 text-2xl fixed top-3 right-2'
-        >
-          <HiOutlineCog />
-        </button>
+        <div className='fixed top-3 right-2'>
+          <Button variant='transparent' onClick={handleSettingsClick}>
+            <Icon name='outline-cog' className='text-gray-200' />
+          </Button>
+        </div>
       </Page.Header>
       <Page.Content noHeader noPaddingX>
         {pageContent}
