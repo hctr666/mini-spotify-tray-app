@@ -1,4 +1,5 @@
-@import "./buttons.css";
+@import './theme.css';
+@import "./button.css";
 @import "./lyrics-viewer.css";
 @import "./page.css";
 @import "./playback.css";

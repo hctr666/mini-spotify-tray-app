@@ -1,0 +1,13 @@
+:root {
+  /* Custom theme colors */
+  --theme-color-gray-dark: #1f1f1f;
+  --theme-color-gray-darker: rgb(24, 24, 24);
+
+  /* Lyrics view colors */
+  --lyrics-color-background: transparent;
+  --lyrics-color-highlight: #fff;
+  --lyrics-color-text: #fff;
+
+  --page-header-height: 50px;
+  --playback-height: 52px;
+}
