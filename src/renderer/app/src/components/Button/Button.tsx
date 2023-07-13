@@ -1,19 +1,12 @@
-import {
-  ButtonHTMLAttributes,
-  MouseEvent,
-  PropsWithChildren,
-  ReactElement,
-  forwardRef,
-} from 'react'
+import { PropsWithChildren, forwardRef } from 'react'
 import cx from 'classnames'
 
-type ButtonVariant = 'primary' | 'neutral' | 'transparent'
+import { ButtonProps, ButtonVariant } from './types'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  rounded?: boolean
-  variant?: ButtonVariant
-  icon?: ReactElement
-  onClick?: (event: MouseEvent<HTMLButtonElement>) => void
+const variants: Record<ButtonVariant, string> = {
+  primary: 'button-primary',
+  neutral: 'button-neutral',
+  transparent: 'button-transparent',
 }
 
 export const Button = forwardRef<
@@ -28,8 +21,8 @@ export const Button = forwardRef<
     ...buttonProps
   } = props
 
-  const variantClasses = `button-${variant}`
-  const finalClassName = cx('button', variantClasses, {
+  const variantClass = variants[variant]
+  const finalClassName = cx('button', variantClass, {
     'button-rounded': rounded,
   })
 

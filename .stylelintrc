@@ -1,0 +1,12 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "import-notation": "string",
+    "comment-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"]
+      }
+    ]
+  }
+}

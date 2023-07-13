@@ -1,0 +1,21 @@
+.synced-lyrics {
+  &-container {
+    @apply px-8 py-5;
+  }
+
+  &-lines {
+    @apply flex flex-col gap-1 leading-7 text-lg font-medium;
+  }
+
+  &-line {
+    @apply text-[--lyrics-color-text];
+
+    &--active {
+      @apply text-[--lyrics-color-highlight];
+    }
+
+    &--passed {
+      @apply text-[--lyrics-color-highlight] opacity-65 transition-all ease-out duration-200;
+    }
+  }
+}

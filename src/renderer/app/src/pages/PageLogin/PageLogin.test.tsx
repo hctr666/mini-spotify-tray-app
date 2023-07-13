@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { Navigate } from 'react-router-dom'
 
 import { useAuth } from '~/hooks/useAuth/useAuth'
-import { Page } from '~/components'
+import { Button, Page } from '~/components'
 import { PageLogin } from './PageLogin'
 
 jest
@@ -12,10 +12,13 @@ jest
     useAuth: jest.fn(),
   }))
   .mock('~/components', () => {
+    const Button = jest.fn(props => (
+      <button onClick={props.onClick}>{props.children}</button>
+    ))
     const Page = jest.fn(props => <div>{props.children}</div>)
     const Content = jest.fn(props => <div>{props.children}</div>)
 
-    return { Page: Object.assign(Page, { Content }) }
+    return { Button, Page: Object.assign(Page, { Content }) }
   })
 
 const mockedUseAuth = useAuth as jest.Mock
@@ -30,6 +33,15 @@ describe('<PageLogin />', () => {
     render(<PageLogin />)
 
     expect(Navigate).not.toHaveBeenCalled()
+    expect(Button).toHaveBeenCalledWith(
+      {
+        children: 'Sign in',
+        onClick: expect.any(Function),
+        rounded: true,
+        variant: 'primary',
+      },
+      {}
+    )
     expect(Page).toHaveBeenCalledWith({ children: expect.any(Object) }, {})
     expect(Page.Content).toHaveBeenCalledWith(
       {

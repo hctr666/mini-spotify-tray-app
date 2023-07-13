@@ -1,0 +1,19 @@
+.button {
+  @apply px-5 py-2 flex items-center justify-center;
+
+  &-rounded {
+    @apply rounded-full;
+  }
+
+  &-primary {
+    @apply bg-primary hover:bg-primary-dark text-white;
+  }
+
+  &-neutral {
+    @apply bg-neutral-lighter hover:bg-neutral text-gray-800;
+  }
+
+  &-transparent {
+    @apply p-0;
+  }
+}

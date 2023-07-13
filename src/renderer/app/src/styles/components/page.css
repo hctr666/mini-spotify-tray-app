@@ -1,0 +1,24 @@
+.page {
+  @apply h-full flex flex-col overflow-y-auto bg-[--theme-color-gray-dark];
+
+  .headline {
+    @apply text-neutral-300 text-lg;
+  }
+
+  &-header {
+    @apply items-center px-3 flex gap-3 h-[--page-header-height];
+    @apply justify-between text-white font-medium fixed w-full;
+  }
+
+  &-content {
+    @apply px-3 pt-[--page-header-height];
+
+    &--no-header {
+      @apply h-full pt-0;
+    }
+
+    &--no-spacing {
+      @apply px-0;
+    }
+  }
+}

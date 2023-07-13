@@ -6,8 +6,7 @@ import { PageHome } from './pages/PageHome/PageHome'
 import { LyricsServiceStateProvider } from './contexts/LyricsServiceStateProvider'
 import { PageSettings } from './pages/PageSettings'
 import { PlaybackProvider } from './contexts/PlaybackProvider/PlaybackProvider'
-import { NotificationContainer } from './components/NotificationContainer'
-import { ProtectedRouteElement } from './components/ProtectedRouteElement'
+import { NotificationContainer, ProtectedRouteElement } from './components'
 import { TrackProvider } from './contexts/TrackProvider'
 
 function App() {

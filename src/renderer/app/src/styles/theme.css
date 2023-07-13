@@ -1,13 +1,18 @@
 :root {
   /* Custom theme colors */
   --theme-color-gray-dark: #1f1f1f;
-  --theme-color-gray-darker: rgb(24, 24, 24);
+  --theme-color-gray-darker: rgb(24 24 24);
 
-  /* Lyrics view colors */
+  /* Page variables */
+  --page-header-height: 50px;
+
+  /* Lyrics view variables */
   --lyrics-color-background: transparent;
   --lyrics-color-highlight: #fff;
   --lyrics-color-text: #fff;
+  --lyrics-viewer-height: calc(100% - var(--playback-height));
 
-  --page-header-height: 50px;
+  /* Playback variables */
   --playback-height: 52px;
+  --playback-controls-width: 100px;
 }

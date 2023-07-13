@@ -2,3 +2,4 @@ LICENSE.md
 out
 /dist-electron
 /**/*/build
+.github

@@ -1,16 +1,18 @@
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { Page } from '~/components'
-import { LyricsViewer } from '~/components/LyricsViewer'
-import { Playback } from '~/components/Playback'
+import {
+  Button,
+  Icon,
+  LyricsNotConnected,
+  LyricsViewer,
+  Page,
+  Playback,
+  PlaybackInactiveMessage,
+} from '~/components'
 import { usePlayback } from '~/hooks/usePlayback'
 import { useLyricsServiceState } from '~/hooks/useLyricsServiceState/useLyricsServiceState'
-import { PlaybackInactiveMessage } from '~/components/PlaybackInactiveMessage'
-import { LyricsNotConnected } from '~/components/LyricsNotConnected'
 import { LyricsProvider } from '~/contexts/LyricsProvider'
-import { Button } from '~/components/Button'
-import { Icon } from '~/components/Icon/Icon'
 
 export const PageHome = () => {
   const navigate = useNavigate()

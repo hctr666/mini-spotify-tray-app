@@ -1,4 +1,4 @@
-import { cloneElement } from 'react'
+import { ReactElement, cloneElement } from 'react'
 import type { IconBaseProps } from 'react-icons'
 import { FaCircle, FaPlug } from 'react-icons/fa'
 import {
@@ -10,15 +10,9 @@ import {
   HiRewind,
 } from 'react-icons/hi'
 
-type IconName = keyof typeof baseIcons
-type IconSize = keyof typeof baseSizes
+import { IconName, IconProps, IconSize } from './types'
 
-interface IconProps extends IconBaseProps {
-  name: IconName
-  size?: IconSize
-}
-
-const baseSizes = {
+const baseSizes: Record<IconSize, number> = {
   xxs: 12,
   xs: 16,
   sm: 20,
@@ -26,7 +20,7 @@ const baseSizes = {
   lg: 32,
 }
 
-const baseIcons = {
+const baseIcons: Record<IconName, () => ReactElement> = {
   circle: () => <FaCircle />,
   plug: () => <FaPlug />,
   play: () => <HiPlay />,

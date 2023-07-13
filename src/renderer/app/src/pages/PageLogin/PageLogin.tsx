@@ -1,7 +1,6 @@
 import { Navigate } from 'react-router-dom'
-import { Button } from '~/components/Button'
 
-import { Page } from '~/components'
+import { Button, Page } from '~/components'
 import { useAuth } from '~/hooks/useAuth/useAuth'
 
 export const PageLogin = () => {

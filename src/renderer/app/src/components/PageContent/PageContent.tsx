@@ -13,7 +13,7 @@ export const PageContent = ({
 }: PropsWithChildren<PageContentProps>) => {
   const classes = classNames('page-content', {
     'page-content--no-header': noHeader,
-    'px-0': noPaddingX,
+    'page-content--no-spacing': noPaddingX,
   })
   return <div className={classes}>{children}</div>
 }

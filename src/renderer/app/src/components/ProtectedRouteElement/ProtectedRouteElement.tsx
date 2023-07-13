@@ -9,7 +9,6 @@ export const ProtectedRouteElement = ({
   element: JSX.Element
 }) => {
   const { isAuthenticated, isLoading } = useAuth()
-  const fallbackElement = <Navigate to='/login' />
 
   if (isLoading) {
     return (
@@ -24,7 +23,7 @@ export const ProtectedRouteElement = ({
   }
 
   if (!isAuthenticated) {
-    return fallbackElement
+    return <Navigate to='/login' />
   }
 
   return element

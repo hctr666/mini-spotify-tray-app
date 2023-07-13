@@ -1,8 +1,9 @@
+/* Taiwind */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Application */
+@import './app.css';
 @import './theme.css';
-@import "./button.css";
-@import "./lyrics-viewer.css";
-@import "./page.css";
-@import "./playback.css";
-@import "./synced-lyrics.css";
-@import "./unsynced-lyrics.css";
-@import "./app.css";
+@import './components/index.css';

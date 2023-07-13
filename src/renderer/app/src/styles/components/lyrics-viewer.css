@@ -1,0 +1,10 @@
+.lyrics-viewer {
+  &-container {
+    @apply overflow-y-auto h-[--lyrics-viewer-height] bg-[--lyrics-color-background];
+  }
+
+  &-not-found,
+  &-error {
+    @apply flex items-center justify-center h-[--lyrics-viewer-height];
+  }
+}
