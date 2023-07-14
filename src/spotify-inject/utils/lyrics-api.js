@@ -1,4 +1,5 @@
 import {
+  BAD_REQUEST_STATUS,
   FORBIDDEN_STATUS,
   NOT_FOUND_STATUS,
   UNAUTHORIZED_STATUS,
@@ -33,7 +34,7 @@ export const fetchTrackLyrics = async (trackId, imageUrl) => {
       return null
     }
 
-    if (response.status === UNAUTHORIZED_STATUS) {
+    if ([UNAUTHORIZED_STATUS, BAD_REQUEST_STATUS].includes(response.status)) {
       throw new Error(errors.INVALID_TOKEN)
     }
 
