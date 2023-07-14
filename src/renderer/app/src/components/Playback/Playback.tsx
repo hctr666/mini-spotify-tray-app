@@ -26,20 +26,32 @@ export const Playback = () => {
         </div>
       </div>
       <div className='playback-controls'>
-        <Button variant='transparent' onClick={skipToPrevious}>
+        <Button
+          aria-label='Previous Track'
+          variant='transparent'
+          onClick={skipToPrevious}
+        >
           <Icon
             name='rewind'
             className='text-neutral-300 hover:text-neutral-lighter'
           />
         </Button>
-        <Button variant='transparent' onClick={playOrPause}>
+        <Button
+          aria-label={`${playbackState.isPlaying ? 'Pause' : 'Play'} Track`}
+          variant='transparent'
+          onClick={playOrPause}
+        >
           <Icon
             name={playbackState.isPlaying ? 'pause' : 'play'}
             size='lg'
             className='text-neutral hover:text-white'
           />
         </Button>
-        <Button variant='transparent' onClick={skipToNext}>
+        <Button
+          aria-label='Next Track'
+          variant='transparent'
+          onClick={skipToNext}
+        >
           <Icon
             name='fast-Forward'
             className='text-neutral-300 hover:text-neutral-lighter'

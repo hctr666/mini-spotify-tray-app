@@ -10,7 +10,7 @@ interface UnsyncedLyricsProps {
 export const UnsyncedLyrics = ({ lyrics }: UnsyncedLyricsProps) => {
   const lines = useMemo(() => {
     return lyrics?.lines?.map((line, idx) => ({
-      idx: `line-${idx}`,
+      id: `line-${idx}`,
       ...line,
     }))
   }, [lyrics])

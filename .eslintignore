@@ -1,5 +1,6 @@
 node_modules
 out
+.vite
 /**/*/build
 /dist-electron
 

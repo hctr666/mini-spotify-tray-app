@@ -3,3 +3,4 @@ out
 /dist-electron
 /**/*/build
 .github
+.vite

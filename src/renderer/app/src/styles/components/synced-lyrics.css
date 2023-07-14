@@ -15,7 +15,7 @@
     }
 
     &--passed {
-      @apply text-[--lyrics-color-highlight] opacity-65 transition-all ease-out duration-200;
+      @apply text-[--lyrics-color-highlight] opacity-70 transition-all ease-out duration-200;
     }
   }
 }

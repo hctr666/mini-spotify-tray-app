@@ -46,7 +46,11 @@ export const PageHome = () => {
     <Page>
       <Page.Header>
         <div className='fixed top-3 right-2'>
-          <Button variant='transparent' onClick={handleSettingsClick}>
+          <Button
+            variant='transparent'
+            onClick={handleSettingsClick}
+            aria-label='Settings'
+          >
             <Icon name='outline-cog' className='text-gray-200' />
           </Button>
         </div>
