@@ -1,13 +1,24 @@
 import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 
-import { PageLogin } from './pages/PageLogin'
-import { AuthProvider } from './contexts/AuthProvider'
-import { PageHome } from './pages/PageHome/PageHome'
-import { LyricsServiceStateProvider } from './contexts/LyricsServiceStateProvider'
-import { PageSettings } from './pages/PageSettings'
-import { PlaybackProvider } from './contexts/PlaybackProvider/PlaybackProvider'
-import { NotificationContainer, ProtectedRouteElement } from './components'
-import { TrackProvider } from './contexts/TrackProvider'
+import {
+  AuthProvider,
+  LyricsProvider,
+  LyricsServiceStateProvider,
+  PlaybackProvider,
+  TrackProvider,
+} from './contexts'
+import {
+  NotificationContainer,
+  PlaybackLayout,
+  ProtectedRouteElement,
+} from './components'
+import { PageHome, PageLogin, PageLyrics, PageSettings } from './pages'
+
+const PageLyricsRoot = () => (
+  <LyricsProvider>
+    <PageLyrics />
+  </LyricsProvider>
+)
 
 function App() {
   return (
@@ -19,12 +30,25 @@ function App() {
               <Routes>
                 <Route path='/login' element={<PageLogin />} />
                 <Route
+                  path='/'
+                  element={
+                    <ProtectedRouteElement element={<PlaybackLayout />} />
+                  }
+                >
+                  <Route
+                    index
+                    element={<ProtectedRouteElement element={<PageHome />} />}
+                  />
+                  <Route
+                    path='/lyrics'
+                    element={
+                      <ProtectedRouteElement element={<PageLyricsRoot />} />
+                    }
+                  />
+                </Route>
+                <Route
                   path='/settings'
                   element={<ProtectedRouteElement element={<PageSettings />} />}
-                />
-                <Route
-                  path='/'
-                  element={<ProtectedRouteElement element={<PageHome />} />}
                 />
               </Routes>
             </TrackProvider>

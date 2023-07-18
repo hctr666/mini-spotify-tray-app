@@ -1,6 +1,7 @@
 import { ReactElement, cloneElement } from 'react'
 import type { IconBaseProps } from 'react-icons'
 import { FaCircle, FaPlug } from 'react-icons/fa'
+import { LuMic2 } from 'react-icons/lu'
 import {
   HiFastForward,
   HiOutlineCog,
@@ -27,6 +28,7 @@ const baseIcons: Record<IconName, () => ReactElement> = {
   pause: () => <HiPause />,
   rewind: () => <HiRewind />,
   'fast-Forward': () => <HiFastForward />,
+  'mic-stage': () => <LuMic2 />,
   'outline-cog': () => <HiOutlineCog />,
   'outline-x': () => <HiOutlineX />,
 }

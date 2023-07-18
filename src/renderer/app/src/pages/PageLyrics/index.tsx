@@ -1,0 +1,1 @@
+export { PageLyrics } from './PageLyrics'

@@ -2,6 +2,7 @@ import { IconBaseProps } from 'react-icons'
 
 export type IconName =
   | 'circle'
+  | 'mic-stage'
   | 'plug'
   | 'play'
   | 'pause'

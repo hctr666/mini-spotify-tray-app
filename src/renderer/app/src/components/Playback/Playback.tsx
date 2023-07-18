@@ -1,3 +1,7 @@
+import { useCallback } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import cx from 'classnames'
+
 import { Button } from '../Button'
 import { Icon } from '../Icon'
 import { usePlayback } from '~/hooks/usePlayback'
@@ -7,8 +11,20 @@ export const Playback = () => {
   const { playbackState, playOrPause, skipToNext, skipToPrevious } =
     usePlayback()
   const { displayTrack } = useTrack()
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
 
+  const isLyricsPage = pathname === '/lyrics'
   const { title, artistName, imageUrl } = displayTrack
+
+  const goToLyricsPage = useCallback(() => {
+    navigate(!isLyricsPage ? '/lyrics' : '/')
+  }, [isLyricsPage, navigate])
+
+  const micButtonClasses = cx('ml-3 text-neutral-300', {
+    'hover:text-neutral-lighter': !isLyricsPage,
+    'text-primary': isLyricsPage,
+  })
 
   return (
     <div className='playback-container'>
@@ -56,6 +72,14 @@ export const Playback = () => {
             name='fast-Forward'
             className='text-neutral-300 hover:text-neutral-lighter'
           />
+        </Button>
+        <Button
+          variant='transparent'
+          aria-label='Open Lyrics'
+          onClick={goToLyricsPage}
+          className={micButtonClasses}
+        >
+          <Icon name='mic-stage' size='sm' />
         </Button>
       </div>
     </div>
