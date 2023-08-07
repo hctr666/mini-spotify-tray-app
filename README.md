@@ -1,6 +1,8 @@
 # Mini Spotify Tray app (WIP)
 
-A minimalist Spotify tray application that syncs with your Spotify active client
+A minimalist Spotify tray application that syncs with your Spotify active client.
+
+One particular thing about this app is that it syncs the lyrics to the proper timestamps just like the original Spotify app does, so we get the same cool experience.
 
 
 
