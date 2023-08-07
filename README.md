@@ -1,3 +1,3 @@
-# Spotify Lyrics Tray app (WIP)
+# Mini Spotify Tray app (WIP)
 
-A Tray application that shows and syncs lyrics from your Spotify active client
+A minimalist Spotify tray application that syncs with your Spotify active client
