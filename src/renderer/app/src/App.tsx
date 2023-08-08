@@ -12,7 +12,7 @@ import {
   PlaybackLayout,
   ProtectedRouteElement,
 } from './components'
-import { PageHome, PageLogin, PageLyrics, PageSettings } from './pages'
+import { PageLogin, PageLyrics, PageSettings } from './pages'
 
 const PageLyricsRoot = () => (
   <LyricsProvider>
@@ -37,7 +37,10 @@ function App() {
                 >
                   <Route
                     index
-                    element={<ProtectedRouteElement element={<PageHome />} />}
+                    element={
+                      // TODO: implement home page
+                      <ProtectedRouteElement element={<PageLyricsRoot />} />
+                    }
                   />
                   <Route
                     path='/lyrics'
